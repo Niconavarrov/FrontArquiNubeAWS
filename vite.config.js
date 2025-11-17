@@ -10,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'public/Scripts/main.js'),
-        index: resolve(__dirname, 'public/Views/Index.html'),
+        index: resolve(__dirname, 'Index.html'),
         callback: resolve(__dirname, 'public/Views/callback.html'),
       },
       output: {
@@ -38,9 +38,9 @@ export default defineConfig({
         const stylesPath = resolve(__dirname, 'public/Styles')
         
         // Copiar Index.html a index.html en la raíz
-        if (existsSync(resolve(viewsPath, 'Index.html'))) {
+        if (existsSync(resolve(__dirname, 'Index.html'))) {
           copyFileSync(
-            resolve(viewsPath, 'Index.html'),
+            resolve(__dirname, 'Index.html'),
             resolve(distPath, 'index.html')
           )
         }
